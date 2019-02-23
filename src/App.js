@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Square from './Square';
+import SimpleSquare from './SimpleSquare';
+import Hideable from './Hideable';
+
+const HideSquareComponent = Hideable(Square);
 
 class App extends Component {
   render() {
@@ -20,6 +25,11 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <SimpleSquare size={50} />
+        <Square size={50} />
+        <Square initialColor="blue" size={100} />
+        <Square showSubTitle={false} initialColor="green" size={150} />
+        <HideSquareComponent isHiddent={false} initialColor="pink" size={100} />
       </div>
     );
   }
